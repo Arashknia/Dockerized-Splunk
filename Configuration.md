@@ -132,6 +132,7 @@ Now it is the time for us to go to the inside of our Splunk container to config 
     > Also the logs related to the performance of your windows (like CPU information) on the main index ```index=main```
     > Sorry I am not teaching you how to query and search. (you can learn Splunk Fundamentals one and two for that!!!)
 15. remember you downloaded an app with the name "Windows Event Logs Analysis"? That was some dashboards for your Windows logs. you should be able to see it on Splunk web UI > apps (Top left) > EventID.Net
-16. see how peace of cake that was? did you enjoy it? thank you for reading the configuration and doing it. for any problems related please contact me on [My Gmail](arashk.nia9@gmail.com) or message me on [My Linkedin](https://www.linkedin.com/in/arashk-nia/). happy to help!!!
-
-GOODBYE EVERYONE!!!
+---
+# Did you see how a piece of cake that was? did you enjoy it? thank you for reading the configuration and doing it. 
+# for any problems related please contact me on [My Gmail](arashk.nia9@gmail.com) or message me on [My Linkedin](https://www.linkedin.com/in/arashk-nia/). happy to help!!!
+# GOODBYE EVERYONE!!!
