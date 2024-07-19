@@ -6,6 +6,6 @@
 3. After installation look for the Splunk/Splunkk image from the docker desktop search box and then pull the image with the "latest" tag. To date of this repository, the Splunk version is 9.2.2. I don't predict there will be a such change on Splunk which may cause issues with our configuration otherwise please inform and I will update the repository
 on other OS you can do it with ```docker pull splunk/splunk```
 
-4. after pull, wait for the pull process to get complete in the docker-desktop notification tab.
+5. after pull, wait for the pull process to get complete in the docker-desktop notification tab.
 
-5. 
+6. 
