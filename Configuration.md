@@ -68,3 +68,5 @@ defaultGroup = idx-group
 6. Save and close the file.
 ---
 
+Now it is the time for us to go to the inside of our Splunk container to config indexer and search head:
+1. 
