@@ -69,4 +69,10 @@ defaultGroup = idx-group
 ---
 
 Now it is the time for us to go to the inside of our Splunk container to config indexer and search head:
-1. 
+1. first let's start the splunk. for that, we need to go inside the container and there are two ways for us to do that.
+   > - First way: run cmd as administrator and enter this command to execute the container and get bash environment
+   >  ```
+   > docker exec -it splunk bash
+   >  ```
+   >  - second way: go to your docker desktop and log in with your docker account on it (sign-up if you didn't have any account till now) > on the left tab click on containers > click on Exec on the top
+   > be sure of Splunk status is on start and running. otherwise, none of these two ways will work.
