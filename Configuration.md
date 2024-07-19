@@ -81,6 +81,33 @@ Now it is the time for us to go to the inside of our Splunk container to config 
    ```
    /opt/splunk/bin/splunk status
    ```
-4. if it is running go to your browser and check the web UI on http://127.0.0.1:8000. enter your username and password and you are welcome!!! :/ and if it is not running run it with ```/opt/splunk/bin/splunk start```
-   > HINT: your password is the password that you set when you were running the container by the command given to you in the [installation.md](https://github.com/Arashknia/Dockerized-Splunk/blob/main/Installation.md) part
-6. ok now run this command to make the Splunk run on HTTPS protocol ```/opt/splunk/bin/splunk enable web-ssl``` (you may need to enter your username and password)
+4. if it is running go to your browser and check the web UI on http://127.0.0.1:8000. enter your username and password!!! :/ and if it is not running run it with ```/opt/splunk/bin/splunk start```
+   > HINT: your password is the password that you set when you were running the container by the command given to you in the [installation.md](https://github.com/Arashknia/Dockerized-Splunk/blob/main/Installation.md) part 8
+6. ok now run this command to make the Splunk run on HTTPS protocol ```/opt/splunk/bin/splunk enable web-ssl``` (you may need to enter your username and password) and then restart the Splunk with ```/opt/splunk/bin/splunk start```. now the web UI should be visible on https://127.0.0.1:8000
+
+# listen_9997 Editions and configuration:
+1. inside your Splunk container enter this command to create the listen_9997 add-on to make the Splunk listen on port 9997
+   ```
+   mkdir -p /opt/splunk/etc/apps/listen9997/local/
+   ```
+2. now create the inputs.conf inside the "/opt/splunk/etc/apps/listen9997/local/"
+   ```
+   vi /opt/splunk/etc/apps/listen9997/local/inputs.conf
+   ```
+   > HINT: sorry, I don't teach you how to work with vi or vim and nano (just search for that please)
+3. These are the configurations that should be put on the file:
+   ```
+   [splunktcp://9997]
+   disabled = 0
+   ```
+4. save and close the file after editing
+5. now you should put Splunk_TA_windows and Windows Event Logs Analysis Folders in "/opt/splunk/etc/apps/" with the docker desktop. for that just go to Docker desktop > Click on Containers on the left pannel > Click on your running Splunk container > click on Files (next to the Exec button) > find "opt > splunk > etc > apps" and right-click on "apps" > click on import > select your edited Splunk_TA_windows folder and do it for  Windows Event Logs Analysis too!
+6. now run this command to give the Splunk user the necessary permissions:
+   ```
+   chown -R splunk:splunk /opt/splunk/*
+   ```
+7. restart the Splunk service:
+   ```
+   /opt/splunk/bin/splunk restart
+   ```
+8. After Splunk service restarted, go to web-UI 
