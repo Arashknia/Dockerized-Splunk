@@ -19,7 +19,7 @@ note: download it based on the OS to which you want to forward the log from it t
 -   7.2 Install it on the default directory and click on the next.
 -   7.2 Don't fill in anything for an SSL certificate. just click on the next.
 -   7.3 HERE IS THE MOST IMPORTANT PART. check the Local system (not the virtual account). because otherwise, the Splunk-forwarder service account won't have access to read all of our event-viewer channels or some system32 files. although if you miss this you can change it in the services tab of your Windows (with an administrator account) on the log-on tab of the universal-forwarder service setting.
--   7.4 Fill all the Check-boxes of all the event-viewer channels that you want to Splunk universal forwarder look into them and send their logs to the indexer. you may be ok to not check Enable AD monitoring if you are not a domain user
+-   7.4 Fill all the Check-boxes of all the event-viewer channels that you want to Splunk universal forwarder to look into and be able to send their logs to the indexer. It's ok to not check Enable AD monitoring if you are not a domain user
 -   7.5 Set a username and password (not a random password)
 -   7.6 Do not give an IP address for the Deployment server. because we don't need to, didn't, and won't implement one.
 -   7.7 Give the IP address 127.0.0.1(localhost) (which is your PC) and the default port 9997. we are giving localhost because our indexer is in our host as a docker container which will be listening on port 9997 after implementation
