@@ -74,5 +74,13 @@ Now it is the time for us to go to the inside of our Splunk container to config 
    >  ```
    > docker exec -it splunk bash
    >  ```
-   >  - second way: go to your docker desktop and log in with your docker account on it (sign-up if you didn't have any account till now) > on the left tab click on containers > click on Exec on the top
+   >  - second way: go to your docker desktop and log in with your docker account on it (sign-up if you didn't have any account till now) > On the left tab click on containers > Click on your splunk container > click on Exec on the top
    > be sure of Splunk status is on start and running. otherwise, none of these two ways will work.
+2. become root by entering ```sudo bash```
+3. enter this command to see what is the status of Splunk:
+   ```
+   /opt/splunk/bin/splunk status
+   ```
+4. if it is running go to your browser and check the web UI on http://127.0.0.1:8000. enter your username and password and you are welcome!!! :/ and if it is not running run it with ```/opt/splunk/bin/splunk start```
+   > HINT: your password is the password that you set when you were running the container by the command given to you in the [installation.md](https://github.com/Arashknia/Dockerized-Splunk/blob/main/Installation.md) part
+6. ok now run this command to make the Splunk run on HTTPS protocol ```/opt/splunk/bin/splunk enable web-ssl``` (you may need to enter your username and password)
