@@ -74,7 +74,7 @@ Now it is the time for us to go to the inside of our Splunk container to config 
    >  ```
    > docker exec -it splunk bash
    >  ```
-   >  - second way: go to your docker desktop and log in with your docker account on it (sign-up if you didn't have any account till now) > On the left tab click on containers > Click on your splunk container > click on Exec on the top
+   >  - second way: go to your docker desktop and log in with your docker account on it (sign-up if you didn't have any account till now) > On the left tab click on containers > Click on your Splunk container > Click on Exec on the top
    > be sure of Splunk status is on start and running. otherwise, none of these two ways will work.
 2. become root by entering ```sudo bash```
 3. enter this command to see what is the status of Splunk:
@@ -131,3 +131,7 @@ Now it is the time for us to go to the inside of our Splunk container to config 
     > You should be able to see your Windows logs by entering this query in the Splunk web UI search bar ```index=wineventlog```
     > Also the logs related to the performance of your windows (like CPU information) on the main index ```index=main```
     > Sorry I am not teaching you how to query and search. (you can learn Splunk Fundamentals one and two for that!!!)
+15. remember you downloaded an app with the name "Windows Event Logs Analysis"? That was some dashboards for your Windows logs. you should be able to see it on Splunk web UI > apps (Top left) > EventID.Net
+16. see how peace of cake that was? did you enjoy it? thank you for reading the configuration and doing it. for any problems related please contact me on [My Gmail](arashk.nia9@gmail.com) or message me on [My Linkedin](https://www.linkedin.com/in/arashk-nia/). happy to help!!!
+
+GOODBYE EVERYONE!!!
