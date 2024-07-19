@@ -28,12 +28,14 @@ note: download it based on the OS to which you want to forward the log from it t
 8. now get back to your docker-desktop. don't run the image with its default command mentioned in docker-hub. we need to make some changes to it to make sure all the necessary ports are opened and are binding between or host and the Splunk container. so run the command below and set the password for Splunk web-UI admin by editing <password> in the given command:
    > Hint: enter this command in your cmd (run cmd as an administrator)
    ```
-   docker run -d -p 8000:8000 -p 8089:8089 -p 9997:9997 -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_PASSWORD=<password>" --name splunk splunk/splunk:latest
+   docker run -d -p 8000:8000 -p 8089:8089 -p 9997:9997 -p 8088:8088 -p 8191:8191 -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_PASSWORD=<password>" --name splunk splunk/splunk:latest
    ```
    > Hint: Splunk default ports that need to be opened between your host and Splunk container are:
    > - 9997 for forwarders to the Splunk indexer.
-   > - 8000 for clients to the Splunk Search page
-   > - 8089 for splunkd (also used by the deployment server which we don't need for our current implementation).
+   > - 8000 for clients to the Splunk Search page (Web Interface)
+   > - 8089 for splunkd and is management port.
+   > - 8088 Collects data sent to Splunk over HTTP
+   > - 8191 KVStore and Internal and Replication
 
 9. check to see if the container is up correctly:
     ```
