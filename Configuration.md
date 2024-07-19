@@ -114,14 +114,20 @@ Now it is the time for us to go to the inside of our Splunk container to config 
    > You should be able to see 9997 under Listen on this port column and the status should be enabled
 9. now go to the web-UI > Settings > Indexes > Click on the New Index on top right > Set the name of the new index with "wineventlog" > Save and create
 10. edit _internal and _introspection size to only 50G. otherwise your host hard-disk with fill by them.
-11. get back to your splunk container within Docker desktop and enter this command:
+11. get back to your Splunk container within the Docker desktop and enter this command:
     ```
     cat /opt/splunk/etc/apps/search/local/indexes.conf
     ```
-    > You should be able to see index of windows is created and is something like this:
+    > You should be able to see the index of Windows is created and is something like this:
     > ```
     > [wineventlog]
     > coldPath = $SPLUNK_DB/wineventlog/colddb
     > homePath = $SPLUNK_DB/wineventlog/db
     > maxTotalDataSizeMB = 512000
     > thawedPath = $SPLUNK_DB/wineventlog/thaweddb
+12. restart the Splunk service with ```/opt/splunk/bin/splunk restart```
+13. restart your universal forwarder of Splunk by going to services on your windows as administrator
+14. Log off and log in to your windows. then check for Windows logs in your Splunk web UI.
+    > You should be able to see your Windows logs by entering this query in the Splunk web UI search bar ```index=wineventlog```
+    > Also the logs related to the performance of your windows (like CPU information) on the main index ```index=main```
+    > Sorry I am not teaching you how to query and search. (you can learn Splunk Fundamentals one and two for that!!!)
