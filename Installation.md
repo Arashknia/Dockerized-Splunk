@@ -25,7 +25,7 @@ note: download it based on the OS to which you want to forward the log from it t
 -   7.7 Give the IP address 127.0.0.1(localhost) (which is your PC) and the default port 9997. we are giving localhost because our indexer is in our host as a docker container which will be listening on port 9997 after implementation
 -   7.7 Install and pray for me if you were too noob :D also, make sure the Splunk universal forwarder is running.
 
-8. now get back to your docker-desktop. don't run the image with its default command mentioned in docker-hub. we need to make some changes to it to make sure all the necessary ports are opened and are binding between or host and the Splunk container. so run the command below: 
+8. now get back to your docker-desktop. don't run the image with its default command mentioned in docker-hub. we need to make some changes to it to make sure all the necessary ports are opened and are binding between or host and the Splunk container. so run the command below and set the password for Splunk web-UI admin with editing <password> in the given command: 
 ```
 $ docker run -d -p 8000:8000 -p 8089:8089 -p 9997:9997 -e "SPLUNK_START_ARGS=--accept-license" -e "SPLUNK_PASSWORD=<password>" --name splunk splunk/splunk:latest
 ```
